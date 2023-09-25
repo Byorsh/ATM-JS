@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+</head>
+<body>
+    <h1>Bienvenido a tu banco de confianza BVBA</h1>
+    <form action="">
+        <label for="">Cuenta Debito 1 Saldo: </label>
+        <input type="text" name="Saldo1" id="saldo1" value="1200">
+
+        <label for="">Cuenta Debito 2 Saldo: </label>
+        <input type="text" name="Saldo2" id="saldo2" value="500">
+    </form>
+
+    <form action="">
+        <h2>Transferencias</h2>
+        <input type="text" name="" id="cant" placeholder="Cantidad a transferir">
+        <hr>
+        <input type="button" value="Transferencia de cuenta 1 a 2" id="transferir1" onclick="transferir('saldo1', 'saldo2')">
+        <input type="button" value="Transferencia de cuenta 2 a 1" id="transferir2" onclick="transferir('saldo2', 'saldo1')">
+        <input type="button" value="Depositar a cuenta 1" id="depositar1" onclick="depositar('saldo1')">
+        <input type="button" value="Depositar a cuenta 2" id="depositar2" onclick="depositar('saldo2')">
+        <input type="button" value="Retirar de cuenta 1" id="retirar1" onclick="retirar('saldo1')">
+        <input type="button" value="Retirar de cuenta 2" id="retirar2" onclick="retirar('saldo2')">
+    </form>
+
+    <script>
+        function transferir(idEmisor, idReceptor){
+            var CantidadT=parseInt(document.getElementById('cant').value);
+            var Cantidad1=parseInt(document.getElementById(idEmisor).value);
+            var Cantidad2=parseInt(document.getElementById(idReceptor).value);
+
+            document.getElementById(idEmisor).value = (Cantidad1 - CantidadT);
+            document.getElementById(idReceptor).value = (Cantidad2 + CantidadT);
+        }
+
+        function depositar(idReceptor){
+            var CantidadD=parseInt(document.getElementById('cant').value);
+            var Cantidad1=parseInt(document.getElementById(idReceptor).value);
+
+            document.getElementById(idReceptor).value = (Cantidad1 + CantidadD);
+        }
+
+        function retirar(idReceptor){
+            var CantidadD=parseInt(document.getElementById('cant').value);
+            var Cantidad1=parseInt(document.getElementById(idReceptor).value);
+
+            document.getElementById(idReceptor).value = (Cantidad1 - CantidadD);
+        }
+
+    </script>
+</body>
+</html>
