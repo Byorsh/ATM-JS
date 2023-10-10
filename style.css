@@ -1,0 +1,35 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid blue;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 35%;
+    padding: 25px 50px;
+    align-content: space-around;
+    border: 2px solid red;
+}
+
+input{
+    height: 35px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+input:hover{
+    background-color: rgb(190, 190, 190);
+
+}
+
