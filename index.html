@@ -10,26 +10,14 @@
     <h1>Login</h1>
     <form action="">
         <label for="">Usuario</label><br>
-        <input type="text" name="usuario" id=""> <br>
+        <input type="text" name="usuario" id="usuario"> <br>
 
         <label for="">Password</label><br>
-        <input type="password" name="password" id=""><br>
+        <input type="password" name="password" id="password"><br>
 
         <input type="button" onclick="login(this.form)" value="Ingresar">
     </form>
 
-    <script>
-        function login(form){
-            if (form.usuario.value == "jorge") {
-                if (form.password.value == "12345") {
-                    location = "principal.html";
-                } else {
-                    alert("Error de password");
-                }
-            } else {
-                alert("Error de usuario");
-            }
-        }
-    </script>
 </body>
+<script src="atm.js"></script>
 </html>
